@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">
+    <title>Online Calculator</title>
+  </head>
+  <body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  {% raw %}
+    <div id="app">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <h1>Web based Calculator</h1>
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <input type="number" id="left" v-model="left">
+                <select class="form-select form-select-lg" id="operator" v-model="operator">
+                    <option v-for="op in operators" :value="op">{{ op }}</option>
+                </select>
+                <input type="number" id="right" v-model="right">
+                <span> = {{ result }}</span>
+                <button class="btn btn-success ml-3" id="calculate" @click="calculate">Calculate</button>
+            </div>
+        </div>
+    </div>
+    {% endraw %}
+	<script src="static/index.js"></script>
+  </body>
+</html>
